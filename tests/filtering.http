@@ -1,0 +1,71 @@
+@nca_api_local = http://127.0.0.1:7000/api/v1
+# @taahab_api_local = https://nca-app.herokuapp.com/api
+
+
+### filterer ###################################
+# @name auth_login_local
+POST {{nca_api_local}}/rugular/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "ali@gmail.com",
+    "password": "Ali123123@"
+}
+################################################
+
+
+### Get tracks (الجوائز) #####################################
+GET {{nca_api_local}}/crm/tracks/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+
+### Get applications (أعمال المرشحين) ########################
+GET {{nca_api_local}}/candidate/4/application/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+### Get application (عمل المرشح ########################
+GET {{nca_api_local}}/candidate/application/14 HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+
+
+
+
+
+
+# ### create filtering #########################################
+# # @name user_account
+# POST {{taahab_api_local}}/event/1/invitation/list/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+
+# {
+#     "first_name": "ahmad",
+#     "last_name": "mohammed",
+#     "mobile": "0512515215", 
+#     "email": "tesefsdsdse@gmail.com",
+#     "role": "participant"
+# }
+# ###############################################################
+
+
+
+# ### update invitation #########################################
+# # @name user_account
+# PUT {{taahab_api_local}}/event/1/invitation/details/e673b0d6-7829-4462-9c15-ecb16461e9a7/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+
+# {
+#     "first_name": "updated ya man"
+# }
+# ###############################################################

@@ -1,0 +1,54 @@
+@nca_api_local = http://127.0.0.1:7000/api
+# @nca_api_local = https://nca-app.herokuapp.com/api
+# USERS
+# filterer1@gmail.com 
+# filterer2@gmail.com 
+# judge1@gmail.com
+# judge2@gmail.com 
+# admin1@gmail.com
+
+### Login ####################################################
+# @name auth_login_local
+POST {{nca_api_local}}/auth/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "prio_filterer@gmail.com",
+    "password": "hackyard_123"
+}
+##############################################################
+
+
+
+### Get groups of similar applications scores (as an admin) ##
+GET {{nca_api_local}}/scoring/prio/list/?track=1 HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+##############################################################
+
+
+
+
+### Update filtering_score (as an admin) ###############################
+PUT {{nca_api_local}}/scoring/prio/details/25/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+
+{
+    "prio_filtering_score": 93.0
+}
+###############################################################
+
+
+
+
+
+### Get 1 scoring (as filterer or judge or admin) ##############
+GET {{nca_api_local}}/scoring/prio/details/25/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+
+

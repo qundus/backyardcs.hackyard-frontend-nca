@@ -1,0 +1,86 @@
+@nca_api_local = https://nca-application.herokuapp.com/api
+
+### Login ####################################################
+# @name auth_login_local
+POST {{nca_api_local}}/auth/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "prio.filterer@hackyard.io",
+    "password": "vision_123"
+}
+##############################################################
+
+
+
+### Get groups of similar applications scores (as an admin) ##
+GET {{nca_api_local}}/scoring/prio/list/?track=1 HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+##############################################################
+
+
+
+### Create prio score (as Prio Filterer or Prio Judge) #######
+POST {{nca_api_local}}/scoring/prio/list/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+
+{
+    "application": 7,
+    "total": 84.0
+}
+##############################################################
+
+
+### Update prio score (as Prio Filterer or Prio Judge) #######
+PUT {{nca_api_local}}/scoring/prio/details/87/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+
+{
+    "total": 95.0
+}
+###############################################################
+
+
+
+
+### Get 1 scoring (by anyone) ################################# 
+GET {{nca_api_local}}/scoring/prio/details/8/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+
+
+
+
+
+### Get group scoring ########################################
+POST {{nca_api_local}}/scoring/prio/group/scoring/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+
+{
+    "object":[
+        {
+            "application": 57,
+            "score": 99.0,
+            "track": 1
+        },
+        {
+            "application": 55,
+            "score": 88.0,
+            "track": 1
+        },
+        {
+            "application": 54,
+            "score": 55.0,
+            "track": 1
+        }
+    ]
+}
+
+###############################################################

@@ -1,0 +1,247 @@
+# @nca_api_local = http://127.0.0.1:7000/api
+@nca_api_local = https://nca-application.herokuapp.com/api
+
+
+
+### admin ###################################################
+# @name auth_login_local
+POST {{nca_api_local}}/auth/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "kawthar@hackyard.io",
+    "password": "kaHack_4045"
+}
+##############################################################
+
+###
+GET https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/661840290/50c2ee8505&width=480&height=360 HTTP/1.1
+
+### Get Applications #########################################
+GET {{nca_api_local}}/application/list/?track=8 HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+##############################################################
+
+
+
+### Create new application (as an admin) #####################
+POST {{nca_api_local}}/application/list/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+
+{   
+    "profile": 8,
+    "track": 1,
+    "participation_title": "test 33 application",
+    "participation_file": "https://google.com",
+    "work_overview": "text",
+    "year_of_execution": "text",
+    "filtering_room": 1,
+    "judging_room": 1
+}
+##############################################################
+
+
+
+### Update application (as an admin) #########################
+PUT {{nca_api_local}}/application/details/3/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+
+{   
+    "profile": 1,
+    "track": 2,
+    "participation_title": "test 33 application",
+    "participation_file": "https://google.com",
+    "work_overview": "text",
+    "year_of_execution": "text",
+    "filtering_room": 1,
+    "judging_room": 1
+}
+###############################################################
+
+
+### Get 1 application #########################################
+GET {{nca_api_local}}/application/details/3/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+
+### Delete application (as an admin)  #########################
+DELETE {{nca_api_local}}/application/details/3/ HTTP/1.1
+Authorization: Bearer {{auth_login_local.response.body.access}}
+Content-Type: application/json
+###############################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# @nca_api_local = http://127.0.0.1:7000/api
+# # @taahab_api_local = https://nca-app.herokuapp.com/api
+
+
+
+# ### admin ###################################
+# # @name auth_login_local
+# POST {{nca_api_local}}/v1/rugular/token/ HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "username": "admin1@gmail.com",
+#     "password": "hackyard_123"
+# }
+# ################################################
+
+
+
+# ### Get Applications (as an admin) ############################
+# GET {{nca_api_local}}/application/list/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+# ###############################################################
+
+
+
+# ### Create new application (as an admin) ############################
+# POST {{nca_api_local}}/application/list/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+
+# {
+#     "profile": 9,
+#     "track": 2,
+#     "participation_title": "text",
+#     "participation_file": "https://google.com",
+#     "work_overview": "text",
+#     "year_of_execution": "text",
+#     "work_publishing": 0,
+#     "profitable_projects": 0,
+#     "filtering_room": 1,
+#     "judging_room": 1
+# }
+# ###############################################################
+
+
+
+# ### Update application (as an admin) ############################
+# PUT {{nca_api_local}}/application/details/3/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+
+# {   
+#     "username": "test@gmail.com",
+#     "name": "mohammed ahmed",
+#     "user_type": 2,
+#     "password": "hackyard_123",
+
+#     "profile": {
+#         "national_id": "10937362",
+#         "city": "Jeddah",
+#         "region": "Makkah Al Mukarramah",
+#         "is_saudi": true,
+#         "gender": "Male",
+#         "date_of_birth": "1993-01-01",
+#         "age_range": "1993-01-01",
+#         "regdate": "1993-01-01",
+#         "initiative_know": "Text goes here",
+#         "status": 1,
+
+#         "cv": "https://www.google.com/",
+#         "picture_id": "https://www.google.com/",
+#         "previous_work_upload": "https://www.google.com/",
+
+#         "support": 0,
+#         "support_details": "Text goes here",
+#         "previous_activities": 0,
+#         "previous_activities_yes": "Text goes here",
+#         "snapchat_url": "https://www.google.com/",
+#         "instagram_media_url": "https://www.google.com/",
+#         "youtube_media_url": "https://www.google.com/",
+#         "linked_media_url": "https://www.google.com/",
+#         "twitter_media_url": "https://www.google.com/",
+#         "other_media_url": "https://www.google.com/",
+
+#         "inspiration_story": "Text goes here",
+#         "additional_files": "Text goes here",
+
+#         "honors_upload": "https://www.google.com/",
+#         "local_award": "https://www.google.com/",
+#         "international_awards": "Thttps://www.google.com/",
+
+#         "tv_host": "Text goes here",
+#         "press_interviews": "Text goes here",
+#         "training_courses": "Text goes here",
+#         "academic_certifications": "Text goes here",
+
+#         "volunteering": "https://www.google.com/",
+#         "book_permit": "https://www.google.com/",
+#         "ownership_agreement": "Text goes here"
+#     }
+# }
+# ###############################################################
+
+
+# ### Get 1 profile ##############################################
+# GET {{nca_api_local}}/profile/details/3/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+# ###############################################################
+
+
+
+# ### Delete profile (as an admin)  ##############################################
+# DELETE {{nca_api_local}}/profile/details/3/ HTTP/1.1
+# Authorization: Bearer {{auth_login_local.response.body.access}}
+# Content-Type: application/json
+# ###############################################################
+
+
+

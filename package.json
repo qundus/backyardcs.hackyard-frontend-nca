@@ -1,0 +1,47 @@
+{
+  "name": "judging-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.7",
+    "@hookform/error-message": "^2.0.1",
+    "@hookstate/core": "^4.0.1",
+    "@tanstack/react-query": "^4.22.4",
+    "axios": "^1.2.3",
+    "crypto-js": "^4.1.1",
+    "i18next": "^22.4.9",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "js-cookie": "^3.0.1",
+    "nanoid": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.42.1",
+    "react-i18next": "^12.1.5",
+    "react-icons": "^4.8.0",
+    "react-pdf": "^6.2.2",
+    "react-router": "^6.7.0",
+    "react-router-dom": "^6.7.0",
+    "react-select": "^5.7.0",
+    "react-youtube": "^10.1.0"
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.0",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "@vitejs/plugin-react": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "tailwindcss": "^3.2.4",
+    "vite": "^4.0.0",
+    "vite-plugin-mkcert": "^1.15.0"
+  }
+}

@@ -1,0 +1,7 @@
+@nca_api = https://nca-application.herokuapp.com/api
+
+### Get Applications #########################################
+GET {{nca_api}}/statistics HTTP/1.1
+# Authorization: Bearer {{auth_login.response.body.access}}
+Content-Type: application/json
+##############################################################

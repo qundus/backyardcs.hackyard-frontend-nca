@@ -1,0 +1,70 @@
+/* https://www.3schools.in/2021/02/how-to-customize-google-translate.html */
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body > .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+body > iframe {
+  display: none !important;
+}
+
+.translate_show > .skiptranslate {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  justify-self: end;
+  align-self: end;
+  place-self: end;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.translate_show > .skiptranslate > span {
+  /* overflow: hidden; */
+  /* position: absolute; */
+  width: max-content;
+  height: max-content;
+  color: transparent !important;
+  transform: translateY(24%);
+}
+
+.translate_show > .skiptranslate > span > a {
+  color: transparent !important;
+}
+
+.google_translate_element select {
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+.goog-te-gadget-simple {
+  display: inline-block !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  border: 1px solid #ccc !important;
+  background-color: #fff !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value > span {
+  margin-right: 8px;
+}
+
+.goog-te-gadget-simple .goog-te-gadget-icon {
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/language_black_24dp.png");
+  width: 24px;
+  height: 24px;
+}
+
